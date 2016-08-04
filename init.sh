@@ -5,17 +5,17 @@
 trap 'exit 0' SIGTERM
 
 
-# compile initial  zone file
+# compile initial zone file
 cd /etc/service/tinydns/root
 make
 
 run_svscan() {
-	echo "starting svscan.." >&2
+	echo "Starting svscan.." >&2
 	svscan /etc/service &
 }
 
 watch_for_changes() {
-	echo "watching for tinydns data file changes.." >&2
+	echo "Watching for tinydns data file changes.." >&2
 	cd /etc/service/tinydns/root
 	
 	while true; do
